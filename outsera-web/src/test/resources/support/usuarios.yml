@@ -1,0 +1,9 @@
+usuarios:
+  - usuario: standard_user
+    senha: secret_sauce
+  - usuario: locked_out_user
+    senha: secret_sauce
+  - usuario: problem_user
+    senha: secret_sauce
+  - usuario: performance_glitch_user
+    senha: secret_sauce
