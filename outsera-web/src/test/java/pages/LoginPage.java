@@ -17,12 +17,10 @@ public class LoginPage {
     }
 
     public void setUser(String username) {
-        driver.findElement(USERNAME).clear();
         driver.findElement(USERNAME).sendKeys(username);
     }
 
     public void setPassword(String password) {
-        driver.findElement(PASSWORD).clear();
         driver.findElement(PASSWORD).sendKeys(password);
     }
 
