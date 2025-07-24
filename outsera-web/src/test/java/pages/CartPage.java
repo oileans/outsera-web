@@ -18,9 +18,9 @@ public class CartPage {
     private static final By LAST_NAME = By.cssSelector("[data-test='lastName']");
     private static final By ZIP_CODE = By.cssSelector("[data-test='postalCode']");
     private static final By CONTINUE_BTN = By.cssSelector(".btn_primary.cart_button");
-    private static final By FINISH_BTN = By.cssSelector("[data-test='finish']");
     private static final By ORDER_NUMBER = By.cssSelector("summary_value_label");
     private static final By SUCCESS_PAGE = By.className("complete-header");
+    private static final By FINISH_BTN = By.className("cart_button");
 
     public CartPage() {
         this.driver = DriverManager.getDriver();

@@ -25,15 +25,8 @@ public class DriverManager {
             prefs.put("profile.password_manager_enabled", false);
             options.setExperimentalOption("prefs", prefs);
 
-            // opcional: remove a barra "Chrome está sendo controlado por..."
-            options.setExperimentalOption(
-                    "excludeSwitches",
-                    new String[]{"enable-automation", "enable-credential-manager"}
-            );
-
             // inicializa com as opções
             driver = new ChromeDriver(options);
-
             driver.manage().window().maximize();
             driver.get("https://www.saucedemo.com/v1/");
         }

@@ -17,23 +17,19 @@
         <junit.version>5.9.3</junit.version>
         <selenium.version>4.22.0</selenium.version>
     </properties>
-
     <dependencies>
-
         <!-- Selenium WebDriver -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
         </dependency>
-
         <!-- WebDriverManager (gerencia os drivers) -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>5.8.0</version>
         </dependency>
-
         <!-- Cucumber -->
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -45,17 +41,13 @@
             <artifactId>cucumber-junit</artifactId>
             <version>${cucumber.version}</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
         <dependency>
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
         </dependency>
-
-
     </dependencies>
-
     <build>
         <plugins>
             <!-- Plugin para compilar -->
@@ -67,7 +59,6 @@
                     <target>${maven.compiler.target}</target>
                 </configuration>
             </plugin>
-
             <!-- Plugin Surefire para rodar testes -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
