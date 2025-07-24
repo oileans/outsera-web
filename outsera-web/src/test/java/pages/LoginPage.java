@@ -1,41 +1,40 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import support.DriverManager;
 
 public class LoginPage {
+    private WebDriver driver;
 
-    WebDriver driver;
+    private By USERNAME = By.cssSelector("[data-test='username']");
+    private By PASSWORD = By.cssSelector("[data-test='password']");
+    private By LOGIN    = By.id("login-button");
+    private By MSG_ERROR = By.cssSelector("[data-test='error']");
 
-    public LoginPage(WebDriver driver) {
-        this.driver = driver;
+    public LoginPage() {
+        this.driver = DriverManager.getDriver();
     }
 
-    By USERNAME = By.cssSelector("[data-test='username']");
-    By PASSWORD = By.cssSelector("[data-test='password']");
-    By MSG_ERROR = By.cssSelector("[data-test='error']");
-    By LOGIN = By.id("login-button");
-
-
     public void setUser(String username) {
+        driver.findElement(USERNAME).clear();
         driver.findElement(USERNAME).sendKeys(username);
     }
 
     public void setPassword(String password) {
+        driver.findElement(PASSWORD).clear();
         driver.findElement(PASSWORD).sendKeys(password);
     }
 
     public void clickLogin() {
-        driver.findElement(LOGIN).isDisplayed();
         driver.findElement(LOGIN).click();
     }
 
     public String getErrorMessage() {
         try {
             return driver.findElement(MSG_ERROR).getText();
-        } catch (NoSuchElementException e) {
-            return "Não foi possível verificar a msg em tela";
+        } catch (Exception e) {
+            return "Erro ao obter mensagem de erro";
         }
     }
 }
