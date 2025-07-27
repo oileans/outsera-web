@@ -16,25 +16,6 @@ Este projeto executa cenários automatizados de testes em aplicações web, util
 
 ---
 
-## 📂 Estrutura do Projeto
-
-src/
-├─ main/
-│ ├─ java/
-│ │ ├─ pages/ # Page Objects
-│ │ └─ support/ # Gerenciamento do Driver e utilitários
-├─ test/
-│ ├─ java/
-│ │ ├─ steps/ # Step Definitions do Cucumber
-│ │ ├─ runners/ # Classe Runner do Cucumber
-│ │ └─ Hooks.java # Setup e Teardown dos testes
-│ └─ resources/
-│ └─ features/ # Features no padrão Gherkin
-
-
-
----
-
 ## 🛠️ Tecnologias & Bibliotecas
 
 | Ferramenta         | Função                                      |
