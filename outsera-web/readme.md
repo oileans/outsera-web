@@ -63,3 +63,8 @@ mvn clean install
 3. Executar os testes
 ```sh
 mvn test
+
+
+3. Relatorio de execução com Cucumber report
+
+target/cucumber-reports/cucumber-report.html
