@@ -1,42 +1,38 @@
-steps:
-  - name: Checkout repository
-    uses: actions/checkout@v3
+name: CI
 
-  - name: Set up Java 11
-    uses: actions/setup-java@v3
-    with:
-      distribution: temurin
-      java-version: '11'
-      cache: maven
+on:
+  push:
+  pull_request:
 
-  - name: Cache Maven local repository
-    uses: actions/cache@v3
-    with:
-      path: ~/.m2/repository
-      key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-      restore-keys: |
-        ${{ runner.os }}-m2-
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-  - name: Build and run tests
-    run: mvn clean test --batch-mode
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-  - name: Upload Cucumber HTML report
-    if: always()
-    uses: actions/upload-artifact@v3
-    with:
-      name: cucumber-report
-      path: target/cucumber-report
+      - name: Set up Java 11
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: '11'
+          cache: maven
 
-  - name: Upload Allure results
-    if: always()
-    uses: actions/upload-artifact@v3
-    with:
-      name: allure-results
-      path: target/allure-results
+      - name: Cache Maven local repository
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-m2-
 
-  - name: Upload Surefire test reports
-    if: always()
-    uses: actions/upload-artifact@v3
-    with:
-      name: surefire-reports
-      path: target/surefire-reports
+      - name: Build and run Cucumber tests
+        run: mvn clean test --batch-mode
+
+      - name: Upload Cucumber HTML report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: cucumber-report
+          path: target/cucumber-report
