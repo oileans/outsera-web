@@ -33,7 +33,7 @@ Este projeto executa cenários automatizados de testes em aplicações web, util
 ### 1. **Clonar o projeto**
 
 ```sh
-git clone https://github.com/seu-usuario/seu-projeto-web-automation.git
+git clone git@github.com:oileans/outsera-web.git
 cd seu-projeto-web-automation
 
 
