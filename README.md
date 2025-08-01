@@ -20,7 +20,7 @@ Este projeto executa cenários automatizados de testes em aplicações web, util
 
 | Ferramenta         | Função                                      |
 |--------------------|---------------------------------------------|
-| Java 11+           | Linguagem de programação base               |
+| Java 17+           | Linguagem de programação base               |
 | Selenium WebDriver | Automação de browser                        |
 | Cucumber           | Testes BDD com Gherkin                      |
 | JUnit 5            | Orquestração dos testes                     |
