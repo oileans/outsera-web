@@ -1,3 +1,4 @@
+@Epic(Checkout)
 Feature: Fluxo de checkout simples no e-commerce
 
   Scenario: Adicionar produto ao carrinho e finalizar a compra com sucesso

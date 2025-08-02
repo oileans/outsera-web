@@ -1,3 +1,4 @@
+@Epic(Login)
 Feature: Login
 
   Scenario: Login com sucesso e navegação para checkout
