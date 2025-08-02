@@ -14,20 +14,27 @@ public class DriverManager {
         if (driver == null) {
             ChromeOptions options = new ChromeOptions();
 
-            // desativa notificações
-            options.addArguments("--disable-notifications");
-            // remove infobars de controle remoto
-            options.addArguments("disable-infobars", "--disable-popup-blocking");
+            // Modo headless moderno
+            options.addArguments("--headless=new");
 
-            // desativa o Password Manager do Chrome
+            // Desativa notificações e popups
+            options.addArguments("--disable-notifications");
+            options.addArguments("--disable-popup-blocking");
+            options.addArguments("disable-infobars");
+
+            // Outros ajustes úteis em headless
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--window-size=1920,1080");
+
+            // Desativa o gerenciador de senhas do Chrome
             Map<String, Object> prefs = new HashMap<>();
             prefs.put("credentials_enable_service", false);
             prefs.put("profile.password_manager_enabled", false);
             options.setExperimentalOption("prefs", prefs);
 
-            // inicializa com as opções
+            // Inicializa o driver
             driver = new ChromeDriver(options);
-            driver.manage().window().maximize();
             driver.get("https://www.saucedemo.com/v1/");
         }
     }
