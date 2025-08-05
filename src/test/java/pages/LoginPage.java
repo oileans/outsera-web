@@ -9,7 +9,7 @@ public class LoginPage {
 
     private By USERNAME = By.cssSelector("[data-test='username']");
     private By PASSWORD = By.cssSelector("[data-test='password']");
-    private By LOGIN    = By.id("login-button");
+    private By LOGIN = By.id("login-button");
     private By MSG_ERROR = By.cssSelector("[data-test='error']");
 
     public LoginPage() {
