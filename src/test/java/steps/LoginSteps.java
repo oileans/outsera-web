@@ -28,4 +28,22 @@ public class LoginSteps {
     public void validarMensagemErro(String mensagemEsperada) {
         Assert.assertEquals(mensagemEsperada, loginPage.getErrorMessage());
     }
+
+    @Given("que estou na página de login")
+    public void que_estou_na_pagina_de_login() {
+        loginPage = new LoginPage();
+    }
+
+    @And("clico no botão de login")
+    public void clico_no_botao_de_login() {
+        loginPage.clickLogin();
+    }
+
+    @Then("devo ver a mensagem de erro {string}")
+    public void devo_ver_a_mensagem_de_erro(String mensagemEsperada) {
+        String mensagemAtual = loginPage.getErrorMessage();
+        Assert.assertEquals(mensagemEsperada, mensagemAtual);
+    }
+
+
 }
