@@ -1,3 +1,5 @@
 usuarios:
   - usuario: standard_user
     senha: secret_sauce
+  - usuario: performance_glitch_user
+    senha: secret_sauce
